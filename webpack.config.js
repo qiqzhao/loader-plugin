@@ -19,6 +19,13 @@ module.exports = {
         loader: './loaders/clean-log-loader',
         // use: ["./loaders/demo/test-sync", "./loaders/demo/test-async"],
       },
+      {
+        test: /\.js$/,
+        loader: './loaders/banner-loader',
+        options: {
+          author: 'A',
+        }
+      },
     ],
   },
   plugins: [
