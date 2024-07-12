@@ -16,7 +16,8 @@ module.exports = {
       // },
       {
         test: /\.js$/,
-        use: ["./loaders/demo/test-sync", "./loaders/demo/test-async"],
+        loader: './loaders/clean-log-loader',
+        // use: ["./loaders/demo/test-sync", "./loaders/demo/test-async"],
       },
     ],
   },
