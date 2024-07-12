@@ -10,10 +10,14 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: /\.js$/,
+      //   loader: './loaders/test-loader.js'
+      // },
       {
         test: /\.js$/,
-        loader: './loaders/test-loader.js'
-      }
+        use: ["./loaders/demo/test-sync", "./loaders/demo/test-async"],
+      },
     ],
   },
   plugins: [
@@ -21,5 +25,5 @@ module.exports = {
       template: path.resolve(__dirname, "./public/index.html"),
     }),
   ],
-  mode: 'development'
+  mode: "development",
 };
