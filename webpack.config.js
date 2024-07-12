@@ -16,15 +16,22 @@ module.exports = {
       // },
       {
         test: /\.js$/,
-        loader: './loaders/clean-log-loader',
+        loader: "./loaders/clean-log-loader",
         // use: ["./loaders/demo/test-sync", "./loaders/demo/test-async"],
       },
       {
         test: /\.js$/,
-        loader: './loaders/banner-loader',
+        loader: "./loaders/banner-loader",
         options: {
-          author: 'A',
-        }
+          author: "A",
+        },
+      },
+      {
+        test: /\.js$/,
+        loader: "./loaders/babel-loader",
+        options: {
+          presets: ["@babel/preset-env"],
+        },
       },
     ],
   },
