@@ -1,6 +1,7 @@
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const TestPlugin = require("./plugins/test-plugin.js");
+const BannerWebpackPlugin = require("./plugins/banner-webpack-plugin.js");
 
 module.exports = {
   entry: "./src/main.js",
@@ -20,13 +21,13 @@ module.exports = {
         loader: "./loaders/clean-log-loader",
         // use: ["./loaders/demo/test-sync", "./loaders/demo/test-async"],
       },
-      {
-        test: /\.js$/,
-        loader: "./loaders/banner-loader",
-        options: {
-          author: "A",
-        },
-      },
+      // {
+      //   test: /\.js$/,
+      //   loader: "./loaders/banner-loader",
+      //   options: {
+      //     author: "A",
+      //   },
+      // },
       {
         test: /\.js$/,
         loader: "./loaders/babel-loader",
@@ -40,7 +41,8 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, "./public/index.html"),
     }),
-    new TestPlugin(),
+    // new TestPlugin(),
+    new BannerWebpackPlugin({ author: "test2" }),
   ],
   mode: "development",
 };
