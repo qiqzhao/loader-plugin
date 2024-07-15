@@ -2,13 +2,14 @@ const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const TestPlugin = require("./plugins/test-plugin.js");
 const BannerWebpackPlugin = require("./plugins/banner-webpack-plugin.js");
+const CleanWebpackPlugin = require("./plugins/clean-webpack-plugin.js");
 
 module.exports = {
   entry: "./src/main.js",
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "js/[name].js",
-    clean: true,
+    // clean: true,
   },
   module: {
     rules: [
@@ -43,6 +44,7 @@ module.exports = {
     }),
     // new TestPlugin(),
     new BannerWebpackPlugin({ author: "test2" }),
+    new CleanWebpackPlugin(),
   ],
   mode: "development",
 };
